@@ -3,7 +3,7 @@ public class Displina {
     private Aluno aluno ;
     private Professor professor;
 
-    public Displina(Professor professor) {
+    public Displina() {
         this.professor = professor;
     }
 
@@ -11,7 +11,7 @@ public class Displina {
         this.disciplina = disciplina;
     }
 
-    public String getDisciplina() {
+    public String getDisciplina(String s) {
         return disciplina;
     }
 

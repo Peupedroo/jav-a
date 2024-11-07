@@ -76,6 +76,7 @@ public final class Professor extends Pessoa implements Folha_pague {
 
     @Override
     public void aplicaerBonus() {
-        double bonus = calcularSalario() * 0.02;
+        double calcularSalario = 0;
+        double bonus = calcularSalario * 0.02;
     }
 }

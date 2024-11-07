@@ -3,13 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Professor prof = new Professor();
-        Professor prof2 = new Professor("pedro",20, "1313914","professor", 13123, 1231);
-        Aluno a = new Aluno();
-        Aluno a2 = new Aluno("joao", 20, "34568", 9.0, 7.5, 8.0);
+        Pessoa prof = new Professor();
+        Pessoa a = new Professor("pedro",20, "1313914","professor", 13123, 1231);
+        Pessoa a2 = new Aluno();
+        Pessoa a3 = new Aluno("joao", 20, "34568", 9.0, 7.5, 8.0);
+        Displina D = new Displina();
         System.out.println("Você é aluno ou professor? (1 para Professor, 2 para Aluno)");
         int escolha = sc.nextInt();
         sc.nextLine();
+        Transformacao T = new Transformacao();
+
 
         switch (escolha) {
             case 1:
@@ -27,18 +30,20 @@ public class Main {
                         prof.setIdade(sc.nextInt());
 
                         sc.nextLine();
+                        System.out.println("digite a disciplina ");
+                        D.getDisciplina(sc.nextLine());
 
                         System.out.println("qual seu cpf");
                         prof.setCPF(sc.nextLine());
 
                         System.out.println("qual o seu salario");
-                        prof.setSalario(sc.nextDouble());
+                        ((Professor) prof).setSalario(sc.nextDouble());
 
                         System.out.println("quanto tempo vc trabalha ");
-                        prof.setTempo(sc.nextInt());
-                        prof.setDisciplina(sc.nextLine());
+                        ((Professor) prof).setTempo(sc.nextInt());
+                        ((Professor) prof).setDisciplina(sc.nextLine());
                         System.out.println("qual sua disciplina ");
-                        prof.setDisciplina(sc.nextLine());
+                        ((Professor) prof).setDisciplina(sc.nextLine());
 
                         System.out.println("informacoes do professor");
                         System.out.println(prof);
@@ -46,8 +51,8 @@ public class Main {
                         System.out.println("vc quer continuar");
                         continuar = sc.nextLine();
 
-                        prof.setCargo(CARGO.Professor);
-                        System.out.println(prof.getCargo());
+                        ((Professor) prof).setCargo(CARGO.Professor);
+                        System.out.println(((Professor) prof).getCargo());
 
 
                         break;
@@ -66,24 +71,24 @@ public class Main {
                 if (h.equalsIgnoreCase("S")) {
                     do {
                         System.out.println("qual o seu nome");
-                        a.setNome(sc.nextLine());
+                        a2.setNome(sc.nextLine());
                         System.out.println("qual sua idade");
-                        a.setIdade(sc.nextInt());
+                        a2.setIdade(sc.nextInt());
                         sc.nextLine();
                         System.out.println("qual seu cpf");
-                        a.setNome(sc.nextLine());
+                        a2.setNome(sc.nextLine());
 
                         System.out.println("qual e a sua primeira nota ");
-                        a.setNota1(sc.nextDouble());
+                        ((Aluno) a2).setNota1(sc.nextDouble());
                         System.out.println("qual a sua segunda nota");
-                        a.setNota2(sc.nextDouble());
+                        ((Aluno) a2).setNota2(sc.nextDouble());
                         sc.nextLine();
                         System.out.println("qual sua terceira nota");
-                        a.setNota3(sc.nextDouble());
-                        a.calcMedia();
+                        ((Aluno) a2).setNota3(sc.nextDouble());
+                        ((Aluno) a2).calcMedia();
 
-                        a.verificarAprovacao();
-                        a.detalhes();
+                        ((Aluno) a2).verificarAprovacao();
+                        ((Aluno) a2).detalhes();
 
                 break;    } while (h.equalsIgnoreCase("S"));
 
